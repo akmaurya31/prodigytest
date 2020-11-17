@@ -7,6 +7,7 @@ var mysql = require('../../node_modules/mysql');
 var jsonxml  = require('../../node_modules/xml2js');
 var jsonxml  = require('../../node_modules/jsontoxml');
 var convert = require('../../node_modules/xml-js');
+var express = require('../../node_modules/express');
 
 const axios = require('../../node_modules/axios');
 
