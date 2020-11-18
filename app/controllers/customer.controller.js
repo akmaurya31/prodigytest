@@ -1,25 +1,10 @@
 const Customer = require("../models/customer.model.js");
-const substrings = require("../../node_modules/substrings");
-// const substr = require("../../node_modules/substr");
-//  const parser = require('../../node_modules/xml2json');
-//onst https = require('../../node_modules/https');
-var mysql = require('../../node_modules/mysql');
-var jsonxml  = require('../../node_modules/xml2js');
-var jsonxml  = require('../../node_modules/jsontoxml');
-var convert = require('../../node_modules/xml-js');
-var express = require('../../node_modules/express');
 
-const axios = require('../../node_modules/axios');
 
-var fs = require('fs');
-const { ECONNABORTED } = require("constants");
-
-  //////////////////////////////////////////////////////////////
- // Customer.m_addBankDetail(req.body, (err, data) => {
   exports.purchase = (req, res) => {  
-    console.log("purchase")
-   
-  };
-  
-  
-  ////////////////
+     
+    linkvar="<a href='https://uat.nsenmf.com/Transactions/MFDMakePayment.aspx?joJOfnmoxoVHW7E39JcLLHpmZFMO5i%2bA0w0%2fh8LHIohbsy6tTTu8ttvENchBlJ9jtmSwjA9Hgexmi5A0bsaT%2fmZ0fd7IaOGH6bmWeG5bZXmBB36tUFp472snObCfL7vCDmOYL9GUXhQz8SVw35kWN0PVx1%2ftScEUgJu4nFNEssOKfolcYxdcrADhh1A09y%2fjxs4tGRckwHt9wnM4UOHPYxZPfNCDKsu1D%2fEJdpedgRgM%2fURp42gZ08j779OXFSFY7nNF1PKd5cPKHi04IAg1eUaDYGuAwnPlf1uA6aCpotYIOlLDvOAYMQQxvC7uUD6ai8yW1qGEzz6M35j73Tdt9GxFV8CToGeUSNZ3kBXnMWQ%3d'>https://uat.nsenmf.com/Transactions/MFDMakePayment.aspx?joJOfnmoxoVHW7E39JcLLHpmZFMO5i%2bA0w0%2fh8LHIohbsy6tTTu8ttvENchBlJ9jtmSwjA9Hgexmi5A0bsaT%2fmZ0fd7IaOGH6bmWeG5bZXmBB36tUFp472snObCfL7vCDmOYL9GUXhQz8SVw35kWN0PVx1%2ftScEUgJu4nFNEssOKfolcYxdcrADhh1A09y%2fjxs4tGRckwHt9wnM4UOHPYxZPfNCDKsu1D%2fEJdpedgRgM%2fURp42gZ08j779OXFSFY7nNF1PKd5cPKHi04IAg1eUaDYGuAwnPlf1uA6aCpotYIOlLDvOAYMQQxvC7uUD6ai8yW1qGEzz6M35j73Tdt9GxFV8CToGeUSNZ3kBXnMWQ%3d</a>";
+ 
+ linkvar=linkvar.substring(9,(linkvar.length+3)*.5);
+  console.log(linkvar)
+   }; 
