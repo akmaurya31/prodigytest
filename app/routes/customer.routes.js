@@ -11,6 +11,5 @@ module.exports = app => {
     app.get("/getNSEBank", customers.getnsebank);//
     app.post("/readFatca1",customers.readFatca1_nov);//executed with error
     app.get("/purchase",customers.purchase);//executed with error
-    app.get("/purchase_sip",customers.purchase_sip);//executed with error
-    app.get("/test",customers.test);//executed with error
+   
 };
