@@ -4,7 +4,7 @@ const substrings = require("../../node_modules/substrings");
 //  const parser = require('../../node_modules/xml2json');
 //onst https = require('../../node_modules/https');
 var mysql = require('../../node_modules/mysql');
-var jsonxml  = require('../../node_modules/xml2js');
+
 var jsonxml  = require('../../node_modules/jsontoxml');
 var convert = require('../../node_modules/xml-js');
 
@@ -12,7 +12,6 @@ const axios = require('../../node_modules/axios');
 
 var fs = require('fs');
 const { ECONNABORTED } = require("constants");
-const dbConfig = require("../config/db.config.js");
 
 exports.showDetails = (req, res) => {
  //console.log(req.body)
@@ -56,12 +55,6 @@ exports.addBankDetail = (req, res) => {
     errflag=1;
 
    // console.log(" accountno: feild is required");
-  }  if (req.body.account_type===undefined || req.body.account_type==''){
-    
-    ash_data.account_type=" account_type: feild is required";
-    errflag=1;
-
-   // console.log(" accountno: feild is required");
   } if(req.body.branch===undefined || req.body.branch==''){
     
     ash_data.branch=" branch: feild is required";
@@ -73,12 +66,7 @@ exports.addBankDetail = (req, res) => {
     errflag=1;
    
     //console.log(" ifsc: feild is required");
-  
-  } if(req.body.bank_code===undefined || req.body.bank_code==''){
-    ash_data.bank_code=" bank_code: feild is required";
-    errflag=1;
-   
-    //console.log(" ifsc: feild is required");
+
   } if(req.body.email===undefined || req.body.email==''){
     ash_data.email=" email: feild is required";
     errflag=1;
@@ -569,4 +557,166 @@ console.log("res last line 969");
   });
   }   
 
+  //////////////////////////////////////////////////////////////
+  exports.perchase = (req, res) => {  
+    console.log("purchase")
+   // return;
+    //Customer.perchase_normal((err, data) => {
+     
+      let ash_arrk={NMFIIService:{
+        service_request:{
+        appln_id:'MFS21399',
+        password:'Account@2121',
+        broker_code:'ARN-21399',
+        iin:'5011221068',
+        sub_trxn_type:'N',
+        poa: 'Y',
+        poa_bank_trxn_type: 'NDCPMS',
+        trxn_acceptance: 'OL',
+        demat_user: 'Y',
+        dp_id: [],
+        bank: 'AXIS',
+        ac_no: '037010100256352',
+        ifsc_code: 'UTIB0000037',
+        sub_broker_arn_code: [],
+        sub_broker_code: [],
+        euin_opted: 'N',
+        euin: [],
+        trxn_execution: [],
+        remarks: [],
+        payment_mode: 'OL',
+        billdesk_bank: 'AXIS',
+        instrm_bank: [],
+        instrm_ac_no: [],
+        instrm_no: [],
+        instrm_amount: '3232',
+        instrm_date: [],
+        instrm_branch: [],
+        instrm_charges: [],
+        micr: [],
+        rtgs_code: [],
+        neft_ifsc: [],
+        advisory_charge: [],
+        dd_charge: [],
+        cheque_deposit_mode: [],
+        debit_amount_type: [],
+        sip_micr_no: [],
+        sip_bank: [],
+        sip_branch: [],
+        sip_acc_no: [],
+        sip_ac_type: [],
+        sip_ifsc_code: [],
+        sip_paymech: [],
+        umrn: [],
+        ach_amt: [],
+        ach_fromdate: [],
+        ach_enddate: [],
+        until_cancelled: [],
+        Return_paymnt_flag: 'Y',
+        Client_callback_url: 'Provide your Webpage / API URL',
+        Bank_holder_name: 'Krishna',
+        Bank_holder_name1: [],
+        Bank_holder_name2: [],
+        iin_conf_flag: 'Y',
+        trxn_initiator: 'I / O',
+        trans_count: '1',
+        utr_no: [],
+        transfer_date: '15-Feb-2020',
+        investor_auth_log: [],
+        ach_exist: 'Y'
+        },
+        childtrans: { 
+        amc: 'T',
+        folio: [],
+        product_code: 'SIP3G',
+        ft_acc_no: [],
+        reinvest: 'N',
+        amount: '10000',
+        sip_from_date: [],
+        sip_end_date: [],
+        sip_freq: [],
+        sip_amount: [],
+        sip_period_day: [],
+        input_ref_no: '52521',
+        perpetual_flag: [],
+        insurance_enabled: [],
+        GOAL_BASED_SIP: [],
+        GOAL_TYPE: [],
+        GOAL_AMOUNT: [],
+        FREEDOM_SIP: 'Y',
+        FREEDOM_TARGET_SCHEME: 'RG2GR',
+        FREEDOM_TENURE: '12',
+        FREEDOM_SWP_AMOUNT: '50000',
+        iin: '5011221068',
+        sub_trxn_type: 'N',
+        poa: 'Y',
+        poa_bank_trxn_type: 'NDCPMS',
+        trxn_acceptance: 'OL',
+        demat_user: 'Y',
+        dp_id: [],
+        bank: 'AXIS',
+        ac_no: '037010100256352',
+        ifsc_code: 'UTIB0000037',
+        sub_broker_arn_code: [],
+        sub_broker_code: [],
+        euin_opted: 'N',
+        euin: [],
+        trxn_execution: [],
+        remarks: [],
+        payment_mode: 'OL',
+        billdesk_bank: 'AXIS',
+        instrm_bank: [],
+        instrm_ac_no: [],
+        instrm_no: [],
+        instrm_amount: '3232',
+        instrm_date: [],
+        instrm_branch: [],
+        instrm_charges: [],
+        micr: [],
+        rtgs_code: [],
+        neft_ifsc: [],
+        advisory_charge: [],
+        dd_charge: [],
+        cheque_deposit_mode: [],
+        debit_amount_type: [],
+        sip_micr_no: [],
+        sip_bank: [],
+        sip_branch: [],
+        sip_acc_no: [],
+        sip_ac_type: [],
+        sip_ifsc_code: [],
+        sip_paymech: [],
+        umrn: [],
+        ach_amt: [],
+        ach_fromdate: [],
+        ach_enddate: [],
+        until_cancelled: [],
+        Return_paymnt_flag: 'Y',
+        Client_callback_url: 'Provide your Webpage / API URL',
+        Bank_holder_name: 'Krishna',
+        Bank_holder_name1: [],
+        Bank_holder_name2: [],
+        iin_conf_flag: 'Y',
+        trxn_initiator: 'I / O',
+        trans_count: '1',
+        utr_no: [],
+        transfer_date: '15-Feb-2020',
+        investor_auth_log: [],
+        ach_exist: 'Y'
+        }  
+      }//service_request
+    } //NMFIIService
+    //else
+    
+    
+     
+     
+    console.log(ash_arrk);
+    let ash_xml_agamji=jsonxml(ash_arrk);  
+    console.log(ash_xml_agamji);
+
+   // });
+  };
   
+  
+  ////////////////
