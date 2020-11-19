@@ -33,7 +33,7 @@ Customer.m_addBankDetail = (inputData, result) => {
       let my_user_id = res[0].id; 
       inputData.user_id=my_user_id; 
       console.log("Email found");
-      let sql_userbank = `INSERT INTO user_bank (user_id,bank_name,acoount_type,branch,accountNo,fscode,isprimary_bank,bank_code) VALUES ('${inputData.user_id}', '${inputData.name}','${inputData.account_type}','${inputData.branch}','${inputData.accountno}','${inputData.ifsc}',0,'${inputData.bank_code}')`; 
+      let sql_userbank = `INSERT INTO user_bank (user_id,bank_name,acoount_type,branch,accountNo,fscode,isBankPrimary) VALUES ('${inputData.user_id}', '${inputData.name}','${inputData.account_type}','${inputData.branch}','${inputData.accountno}','${inputData.ifsc}',0)`; 
      
       sql.query(sql_userbank, function (err, resvv) {
 
@@ -220,9 +220,17 @@ Customer.getFatcamm_nov = (email, result) => {
 
 };
  
-
-
-
+//////////////////////////////////////
+  Customer.perchase_normal  = result => {
+    // sql.query("SELECT * FROM users", (err, res) => {
+    //   if (err) {
+    //     console.log("error: ", err);
+    //     result(null, err);
+    //     return;
+    //   }
   
-   
+    //   console.log("users List: ", res);
+    //   result(null, res);
+    // });
+  };
 module.exports = Customer;
