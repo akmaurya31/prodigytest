@@ -569,42 +569,4 @@ console.log("res last line 969");
   });
   }   
 
-  //////////////////////////////////////////////////////////////
- // Customer.m_addBankDetail(req.body, (err, data) => {
-  exports.purchase = (req, res) => {  
-    console.log("purchase")
-    const postarray= { email:req.body.email,
-      sub_trxn_type:req.body.sub_trxn_type,
-      trxn_acceptance:req.body.trxn_acceptance,
-      payment_mode:req.body.payment_mode,
-      instrm_amount:req.body.instrm_amount,
-      debit_amount_type:req.body.debit_amount_type,
-      Return_paymnt_flag:req.body.Return_paymnt_flag,
-      Client_callback_url:req.body.Client_callback_url,
-      ach_exist:req.body.ach_exist,
-      amc:req.body.amc,
-      product_code:req.body.product_code,
-      reinvest:req.body.reinvest,
-      amount:req.body.amount,
-      input_ref_no:req.body.input_ref_no,
-      perpetual_flag:req.body.perpetual_flag
-
-    }
-   // return;
-   Customer.purchase_normal(postarray.email,(err, data) => {
-
-     
-   
-    return
-   
-   
-    
-      console.log("res last line 829");
-
-
-
-    });
-  };
   
-  
- 
