@@ -593,18 +593,8 @@ console.log("res last line 969");
    // return;
    Customer.purchase_normal(postarray.email,(err, data) => {
 
-    if(data!=null){        
-      if (!Array.isArray(data) || !data.length) {                
-     return res.json({
-       success: 200,
-       message: "Email Record not Found in user table"
-     });
-   }}
+     
    
-   let urs=data[0]
-   let resdatemy=String(urs.date_of_birrth);   
-    let resaccountNomy=urs.accountNo;
-    console.log("res line 844",urs.bank_code);
     return
    
    
